@@ -1,0 +1,86 @@
+//// Semantic colors
+
+@primary-color:         @color1; // "primary" means nothing, so we use @color1 here
+@success-color:         #62c462; // a reassuring green
+@danger-color:          #ee5f5b; // an alarming red
+@info-color:            #5bc0de; // a non-commital light blue
+@warning-color:         #f89406; // a slightly less alarming orange
+
+//// SchemeLESS overrides
+
+@seed-color:#d94e96; // change this to your desired color
+@l-factor:56%; // used for "L" in HSL color creation
+
+//// Grays
+
+// Flavor bootstrap grays just a tiny bit with @color1
+
+@gray-mix:99%; // how much to mix in the originals
+@gray-mix-color:desaturate(@color1,50%); // effectively makes above 99.5%
+
+@black:                 mix(#000,@gray-mix-color,@gray-mix);
+@grayDarker:            mix(#222,@gray-mix-color,@gray-mix);
+@grayDark:              mix(#333,@gray-mix-color,@gray-mix);
+@gray:                  mix(#555,@gray-mix-color,@gray-mix);
+@grayLight:             mix(#999,@gray-mix-color,@gray-mix);
+@grayLighter:           mix(#eee,@gray-mix-color,@gray-mix);
+@white:                 mix(#fff,@gray-mix-color,@gray-mix);
+
+//// Bootstrap helper colors
+
+// Not really compatible with schemeLESS's relative color design principles
+// Included and schemified anyway in case you're using them
+
+@blue:                  #049cdb;
+@blueDark:              #0064cd;
+@green:                 #46a546;
+@red:                   #9d261d;
+@yellow:                #ffc40d;
+@orange:                #f89406;
+@pink:                  #c3325f;
+@purple:                #7a43b6;
+
+// Links
+// -------------------------
+@linkColor:             hsl(hue(@primary-color),@sat,@l-factor);
+@linkColorHover:        darken(@linkColor, 15%);
+
+//// Button color overrides
+
+// @primary-color (@color1)
+@btnPrimaryBackground:              hsl(hue(@primary-color),@sat,@l-factor);
+@btnPrimaryBackgroundHighlight:     hsl(hue(@primary-color),@sat,@l-factor - 15);
+
+// @info-color
+@btnInfoBackground:                 hsl(hue(@info-color),@sat,@l-factor);
+@btnInfoBackgroundHighlight:        hsl(hue(@info-color),@sat,@l-factor - 15);
+
+// @success-color with partially preserved saturation
+@btnSuccessBackground:              hsl(hue(@success-color),(saturation(@success-color) + @sat)/2,@l-factor);
+@btnSuccessBackgroundHighlight:     hsl(hue(@success-color),(saturation(@success-color) + @sat)/2,@l-factor - 15);
+
+// @warning-color with partially preserved and bumped up saturation
+@btnWarningBackground:              hsl(hue(@warning-color),(saturation(@warning-color) + @sat + 16)/2,@l-factor);
+@btnWarningBackgroundHighlight:     hsl(hue(@warning-color),(saturation(@warning-color) + @sat + 16)/2,@l-factor - 15);
+
+// @danger-color with partially preserved saturation
+@btnDangerBackground:               hsl(hue(@danger-color),(saturation(@danger-color) + @sat)/2,@l-factor);
+@btnDangerBackgroundHighlight:      hsl(hue(@danger-color),(saturation(@danger-color) + @sat)/2,@l-factor - 15);
+
+// inverse button with a hint of @color1
+@btnInverseBackground:              hsl(hue(@color1),6%,@l-factor - 20);
+@btnInverseBackgroundHighlight:     hsl(hue(@color1),6%,@l-factor - 35);
+
+//// Form states and alerts
+
+@errorText:             hsl(hue(@danger-color),@sat,@l-factor);
+@errorBackground:       hsl(hue(@danger-color),(saturation(@danger-color) + @sat)/2,@l-factor + 35);
+@errorBorder:           darken(spin(@warningBackground, -10), 3%);
+
+@successText:             #468847;
+@successBackground:       #dff0d8;
+@successBorder:           darken(spin(@successBackground, -10), 5%);
+
+@infoText:                #3a87ad;
+@infoBackground:          #d9edf7;
+@infoBorder:              darken(spin(@infoBackground, -10), 7%);
