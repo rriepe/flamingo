@@ -2071,8 +2071,8 @@ select:focus:invalid:focus {
 }
 .input-append .active,
 .input-prepend .active {
-  background-color: #a9dba9;
-  border-color: #46a546;
+  background-color: #c4f3c4;
+  border-color: #46d846;
 }
 .input-prepend .add-on,
 .input-prepend .btn {
@@ -5635,11 +5635,11 @@ a.badge:focus {
 }
 .label-warning,
 .badge-warning {
-  background-color: #f89406;
+  background-color: #d89b46;
 }
 .label-warning[href],
 .badge-warning[href] {
-  background-color: #c67605;
+  background-color: #c28229;
 }
 .label-success,
 .badge-success {
@@ -5846,18 +5846,18 @@ a.badge:focus {
 }
 .progress-warning .bar,
 .progress .bar-warning {
-  background-color: #faa732;
-  background-image: -moz-linear-gradient(top, #fbb450, #f89406);
-  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#fbb450), to(#f89406));
-  background-image: -webkit-linear-gradient(top, #fbb450, #f89406);
-  background-image: -o-linear-gradient(top, #fbb450, #f89406);
-  background-image: linear-gradient(to bottom, #fbb450, #f89406);
+  background-color: #e0af6c;
+  background-image: -moz-linear-gradient(top, #e5bd85, #d89b46);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#e5bd85), to(#d89b46));
+  background-image: -webkit-linear-gradient(top, #e5bd85, #d89b46);
+  background-image: -o-linear-gradient(top, #e5bd85, #d89b46);
+  background-image: linear-gradient(to bottom, #e5bd85, #d89b46);
   background-repeat: repeat-x;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fffbb450', endColorstr='#fff89406', GradientType=0);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffe5bd85', endColorstr='#ffd89b46', GradientType=0);
 }
 .progress-warning.progress-striped .bar,
 .progress-striped .bar-warning {
-  background-color: #fbb450;
+  background-color: #e5bd85;
   background-image: -webkit-gradient(linear, 0 100%, 100% 0, color-stop(0.25, rgba(255, 255, 255, 0.15)), color-stop(0.25, transparent), color-stop(0.5, transparent), color-stop(0.5, rgba(255, 255, 255, 0.15)), color-stop(0.75, rgba(255, 255, 255, 0.15)), color-stop(0.75, transparent), to(transparent));
   background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
   background-image: -moz-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
@@ -7166,4 +7166,18 @@ a.badge:focus {
     height: auto !important;
     overflow: visible !important;
   }
+}
+h1 {
+  line-height: 53px;
+}
+h1:before {
+  display: block;
+  float: left;
+  content: "";
+  background-color: #d84691;
+  background-color: #d94e96;
+  background-image: url('../img/flamingo.png');
+  width: 40px;
+  height: 53px;
+  margin-right: 6px;
 }

@@ -1,15 +1,17 @@
+//// SchemeLESS overrides
+
+@seed-color:#d94e96; // change this to your desired base color
+//@l-factor:56%; // used for "L" in HSL color creation, ensures readability
+@l-factor:(@luma + (56*3))/4; // used for "L" in HSL color creation, ensures readability
+
+
 //// Semantic colors
 
-@primary-color:         @color1; // "primary" means nothing, so we use @color1 here
+@brand-primary:         @color1; // "primary" means nothing, so we use user-supplied @color1 (@seed-color) here
 @success-color:         #62c462; // a reassuring green
 @danger-color:          #ee5f5b; // an alarming red
 @info-color:            #5bc0de; // a non-commital light blue
 @warning-color:         #f89406; // a slightly less alarming orange
-
-//// SchemeLESS overrides
-
-@seed-color:#d94e96; // change this to your desired color
-@l-factor:56%; // used for "L" in HSL color creation
 
 //// Grays
 
@@ -18,38 +20,30 @@
 @gray-mix:99%; // how much to mix in the originals
 @gray-mix-color:desaturate(@color1,50%); // effectively makes above 99.5%
 
-@black:                 mix(#000,@gray-mix-color,@gray-mix);
-@grayDarker:            mix(#222,@gray-mix-color,@gray-mix);
-@grayDark:              mix(#333,@gray-mix-color,@gray-mix);
-@gray:                  mix(#555,@gray-mix-color,@gray-mix);
-@grayLight:             mix(#999,@gray-mix-color,@gray-mix);
-@grayLighter:           mix(#eee,@gray-mix-color,@gray-mix);
-@white:                 mix(#fff,@gray-mix-color,@gray-mix);
-
 //// Bootstrap helper colors
 
 // Not really compatible with schemeLESS's relative color design principles
 // Included and schemified anyway in case you're using them
 
-@blue:                  #049cdb;
-@blueDark:              #0064cd;
-@green:                 #46a546;
-@red:                   #9d261d;
-@yellow:                #ffc40d;
-@orange:                #f89406;
-@pink:                  #c3325f;
-@purple:                #7a43b6;
+@blue:                  hsl(hue(#049cdb),@sat,@l-factor);
+@blueDark:              hsl(hue(#0064cd),@sat,@l-factor);
+@green:                 hsl(hue(#46a546),@sat,@l-factor);
+@red:                   hsl(hue(#9d261d),@sat,@l-factor);
+@yellow:                hsl(hue(#ffc40d),@sat,@l-factor);
+@orange:                hsl(hue(#f89406),@sat,@l-factor);
+@pink:                  hsl(hue(#c3325f),@sat,@l-factor);
+@purple:                hsl(hue(#7a43b6),@sat,@l-factor);
 
-// Links
-// -------------------------
-@linkColor:             hsl(hue(@primary-color),@sat,@l-factor);
+//// Links
+
+@linkColor:             hsl(hue(@brand-primary),(@sat + 50)/2,@l-factor - 15);
 @linkColorHover:        darken(@linkColor, 15%);
 
 //// Button color overrides
 
-// @primary-color (@color1)
-@btnPrimaryBackground:              hsl(hue(@primary-color),@sat,@l-factor);
-@btnPrimaryBackgroundHighlight:     hsl(hue(@primary-color),@sat,@l-factor - 15);
+// @brand-primary (@color1)
+@btnPrimaryBackground:              hsl(hue(@brand-primary),@sat,@l-factor);
+@btnPrimaryBackgroundHighlight:     hsl(hue(@brand-primary),@sat,@l-factor - 15);
 
 // @info-color
 @btnInfoBackground:                 hsl(hue(@info-color),@sat,@l-factor);
@@ -71,16 +65,22 @@
 @btnInverseBackground:              hsl(hue(@color1),6%,@l-factor - 20);
 @btnInverseBackgroundHighlight:     hsl(hue(@color1),6%,@l-factor - 35);
 
+
 //// Form states and alerts
 
-@errorText:             hsl(hue(@danger-color),@sat,@l-factor);
-@errorBackground:       hsl(hue(@danger-color),(saturation(@danger-color) + @sat)/2,@l-factor + 35);
-@errorBorder:           darken(spin(@warningBackground, -10), 3%);
+@warningText:               hsl(hue(@warning-color),(saturation(@warning-color) + @sat)/2,(luma(@warning-color) + 0)/2);
+@warningBackground:         hsl(hue(@warning-color),@sat + 10,(@l-factor + 120)/2);
+@warningBorder:             darken(@warningBackground, 3%);
 
-@successText:             #468847;
-@successBackground:       #dff0d8;
-@successBorder:           darken(spin(@successBackground, -10), 5%);
+@errorText:                 hsl(hue(@danger-color),(saturation(@danger-color) + @sat)/2,(luma(@success-color) + 0)/2);
+@errorBackground:           hsl(hue(@danger-color),@sat,(@l-factor + 120)/2);
+@errorBorder:               darken(@errorBackground, 3%);
 
-@infoText:                #3a87ad;
-@infoBackground:          #d9edf7;
-@infoBorder:              darken(spin(@infoBackground, -10), 7%);
+@successText:               hsl(hue(@success-color),(saturation(@success-color) + @sat)/2,(luma(@success-color) + 0)/2);
+@successBackground:         hsl(hue(@success-color),@sat,(luma(@success-color) + 100)/2);
+@successBorder:             darken(@successBackground, 3%);
+
+@infoText:                  hsl(hue(@info-color),(saturation(@info-color) + @sat)/2,(luma(@success-color) + 0)/2);
+@infoBackground:            hsl(hue(@info-color),@sat,(@l-factor + 120)/2);
+@infoBorder:                darken(@infoBackground, 3%);
+

@@ -9,7 +9,7 @@ $(document).ready(function() {
         animationEasing: 'swing',
         change: updateScheme,
         changeDelay: 40,
-        control: 'hue',
+        control: 'saturation',
         defaultValue: '#d94e96',
         hide: null,
         hideSpeed: 100,

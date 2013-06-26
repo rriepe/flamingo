@@ -12,60 +12,101 @@
     </head>
     <body id="bootstrap_1pxdeep">
         <div class="container pushdown">
-                <div class="row">
-                    <div class="span3">
-                        <h1>flamingo</h1>
-                        <p>Fast colors for basic Bootstrap</p>
-                        <a href="#" class="btn btn-block btn-large btn-primary">Download LESS version</a>
-                        <a href="#" class="btn btn-large btn-block btn-info">Github Project</a>
-                    </div>
-                    <div class="span8 offset1">
-                        <div class="row-fluid">
-                            <form id="demo_form" class="form-inline">
-                                <label for="scheme_color" class="radio acc-ana color-wheel-label">
-                                    Seed&nbsp;color
-                                    <input id="scheme_color" type="text"/>
-                                </label>
-                            </form>
-                        </div>
-                        <div class="row-fluid">
-                            <div class="span12">
-                                <div class="alert alert-error">
-                                    <button type="button" class="close" data-dismiss="alert">&times;</button>
-                                    <strong>Warning!</strong> Best check yo self, you're not looking too good.
-                                </div>
-                                <div class="alert alert">
-                                    <button type="button" class="close" data-dismiss="alert">&times;</button>
-                                    <strong>Warning!</strong> Best check yo self, you're not looking too good.
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row-fluid">
-                            <div class="span2">
-                                <button class="btn btn-block btn-primary">Primary</button>
-                            </div>
-                            <div class="span2">
-                                <button class="btn btn-block btn-info">Info</button>
-                            </div>
-                            <div class="span2">
-                                <button class="btn btn-block btn-inverse">Inverse</button>
-                            </div>
-                            <div class="span2">
-                                <button class="btn btn-block btn-success">Success</button>
-                            </div>
-                            <div class="span2">
-                                <button class="btn btn-block btn-warning">Warning</button>
-                            </div>
-                            <div class="span2">
-                                <button class="btn btn-block btn-danger">Danger</button>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <p>Looking for something <strong>bolder</strong>? Try <a href="http://rriepe.github.io/1pxdeep/">1pxdeep</a></p>
+            <div class="row hide">
+                <div class="span12">
+                    <div id="main_navbar" class="navbar navbar-inverse">
+                        <div class="navbar-inner">
+
                         </div>
                     </div>
                 </div>
             </div>
+            <div class="row">
+                <div class="span3">
+                    <h1>flamingo</h1>
+                    <p>Better colors for basic Bootstrap</p>
+                    <a href="#" class="btn btn-block btn-large btn-primary">Download LESS version</a>
+                    <a href="#" class="btn btn-large btn-block btn-info">Github Project</a>
+                </div>
+                <div class="span8 offset1">
+                    <h3>Try it now</h3>
+                    <form id="demo_form" class="form-inline">
+                        <label for="scheme_color" class="radio acc-ana color-wheel-label">
+                            Pick a seed&nbsp;color:
+                            <input id="scheme_color" type="text"/>
+                        </label>
+                        <span class="help hide"><em>Your brand color, or just any color</em></span>
+                    </form>
+                    <h3>What it does</h3>
+                    <div class="row-fluid">
+                        <p>Flamingo bridges <a href="#">SchemeLESS</a> and <a href="#">Bootstrap</a>.</p>
+                        <p>It gives you better default <strong>button</strong>, <strong>link</strong> and <strong>alert</strong> colors, all based on the seed color you provide.</p>
+                        <p>Looking for even more color for your Bootstrap site? Try the <a href="http://rriepe.github.io/1pxdeep/">1pxdeep</a> theme.</p>
+                    </div>
+                    <h3>How to use it</h3>
+                    <div class="row-fluid">
+                        <p>Just include <strong>scheme.less</strong> and <strong>flamingo.less</strong> after your other LESS files.</p>
+                        <p>Then, edit @seed-color in <strong>scheme.less</strong>.</p>
+                    </div>
+                    <h3>Buttons</h3>
+                    <div class="row-fluid">
+                        <div class="span2">
+                            <p>
+                                <button class="btn btn-block btn-default">Default</button>
+                            </p>
+                        </div>
+                        <div class="span2">
+                            <p>
+                                <button class="btn btn-block btn-primary">Primary</button>
+                            </p>
+                        </div>
+                        <div class="span2">
+                            <p>
+                                <button class="btn btn-block btn-info">Info</button>
+                            </p>
+                        </div>
+                        <div class="span2">
+                            <p>
+                                <button class="btn btn-block btn-success">Success</button>
+                            </p>
+                        </div>
+                        <div class="span2">
+                            <p>
+                                <button class="btn btn-block btn-warning">Warning</button>
+                            </p>
+                        </div>
+                        <div class="span2">
+                            <p>
+                                <button class="btn btn-block btn-danger">Danger</button>
+                            </p>
+                        </div>
+                    </div>
+                    <h3>Alerts</h3>
+                    <div class="row-fluid">
+                        <div class="span6">
+                            <div class="alert alert-error">
+                                <button type="button" class="close" data-dismiss="alert">&times;</button>
+                                <strong>Error</strong>
+                            </div>
+                            <div class="alert alert-success">
+                                <button type="button" class="close" data-dismiss="alert">&times;</button>
+                                <strong>Alerts!</strong> Alert colors are adjusted too.
+                            </div>
+                        </div>
+                        <div class="span6">
+                            <div class="alert alert-info">
+                                <button type="button" class="close" data-dismiss="alert">&times;</button>
+                                <strong>Alerts!</strong> Alert colors are adjusted too.
+                            </div>
+                            <div class="alert alert-warning">
+                                <button type="button" class="close" data-dismiss="alert">&times;</button>
+                                <strong>Alerts!</strong> Alert colors are adjusted too.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
         <link rel="stylesheet/less" type="text/css" href="less/index.less" />
         <script type="text/javascript" src="js/jquery.js"></script>
